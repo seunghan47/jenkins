@@ -4,7 +4,7 @@ pipeline {
         stage('Building npm file') {
             steps {
                 echo "bilding npm file"
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
         stage('Pushing to s3 bucket') {
