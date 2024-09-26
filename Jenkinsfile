@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Install Depedencies') {
+        stage('Building npm file') {
             steps {
-                echo "install dependencies"
-                sh 'sleep 10s'
+                echo "bilding npm file"
+                sh 'npm build'
+            }
+        }
+        stage('Pushing to s3 bucket') {
+            steps {
+                echo "push to s3 bucket"
+                // sh 'aws s3 copy /npmBiuld'
             }
         }
     }
